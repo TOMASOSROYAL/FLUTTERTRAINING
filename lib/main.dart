@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false, // Removes the debug banner
+      debugShowCheckedModeBanner: false, 
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -55,30 +55,30 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'krisi ohel batahat', // Static text
+              'krisi ohel batahat', 
             ),
             Text(
-              '$_counter', // Displays the counter value
+              '$_counter', 
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 16.0), // Ensures alignment
+        padding: const EdgeInsets.only(right: 16.0), 
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end, // Align buttons to the right
+          mainAxisAlignment: MainAxisAlignment.end, 
           children: [
             FloatingActionButton(
-              heroTag: 'decrement', // Unique tag to avoid conflicts
-              onPressed: _decrementCounter, // Decrements the counter
+              heroTag: 'decrement', 
+              onPressed: _decrementCounter, 
               tooltip: 'Decrement',
               child: const Icon(Icons.remove),
             ),
-            const SizedBox(width: 10), // Space between buttons
+            const SizedBox(width: 10), 
             FloatingActionButton(
-              heroTag: 'increment', // Unique tag to avoid conflicts
-              onPressed: _incrementCounter, // Increments the counter
+              heroTag: 'increment', 
+              onPressed: _incrementCounter, 
               tooltip: 'Increment',
               child: const Icon(Icons.add),
             ),
