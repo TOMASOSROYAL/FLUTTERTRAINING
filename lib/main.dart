@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KrisiOhelBatahat',
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false, // Removes the debug banner
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Alkan Ones tinokot'),
+      home: const MyHomePage(title: 'krisi ohel batahat'),
     );
   }
 }
@@ -32,12 +32,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink,
         title: Text(widget.title),
       ),
       body: Center(
@@ -45,20 +55,35 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Beeri Homo',
+              'krisi ohel batahat', // Static text
             ),
             Text(
-              '$_counter',
+              '$_counter', // Displays the counter value
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          
-        ],
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 16.0), // Ensures alignment
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end, // Align buttons to the right
+          children: [
+            FloatingActionButton(
+              heroTag: 'decrement', // Unique tag to avoid conflicts
+              onPressed: _decrementCounter, // Decrements the counter
+              tooltip: 'Decrement',
+              child: const Icon(Icons.remove),
+            ),
+            const SizedBox(width: 10), // Space between buttons
+            FloatingActionButton(
+              heroTag: 'increment', // Unique tag to avoid conflicts
+              onPressed: _incrementCounter, // Increments the counter
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
+            ),
+          ],
+        ),
       ),
     );
   }
